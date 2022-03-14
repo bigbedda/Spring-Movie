@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.movies.entity.Movie;
+import com.movies.service.MovieService;
 
 
 @RestController
