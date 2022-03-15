@@ -45,14 +45,14 @@ public class MovieService implements ServiceMethods<Movie> {
 
 	
 	@Override
-	public Movie update(long id, Movie Movie) {
+	public Movie update(long id, Movie movie) {
 		Optional<Movie> existingMovie = this.repo.findById(id);
 		if(existingMovie.isPresent()) {
 			Movie exists = existingMovie.get();
-			exists.setAge(Movie.getAge());
-			exists.setrating(null);
-			exists.setdirector(Movie.getdirector());
-			exists.setName(Movie.getName());
+			exists.setAge(movie.getAge());
+			exists.setrating(movie.getrating());
+			exists.setdirector(movie.getdirector());
+			exists.setName(movie.getName());
 			
 			return this.repo.saveAndFlush(exists);
 		}

@@ -29,14 +29,14 @@ public class MovieController {
 	
 	
 	@PostMapping("/create")
-	public ResponseEntity<Movie> createMovie(@RequestBody Movie Movie) {
-		return new ResponseEntity<Movie>(this.service.create(Movie), HttpStatus.CREATED);
+	public ResponseEntity<Movie> createMovie(@RequestBody Movie movie) {
+		return new ResponseEntity<Movie>(this.service.create(movie), HttpStatus.CREATED);
 	}
 	
 	
 	@GetMapping("/readAll")
 	public ResponseEntity<List<Movie>> readAllMovies() {
-		//We return a list because the read all method in the service class returns a list also
+		
 		return new ResponseEntity<List<Movie>>(this.service.readAll(), HttpStatus.OK);
 	}
 		
@@ -49,8 +49,8 @@ public class MovieController {
 	
 	
 	@PutMapping("/update/{id}")
-	public ResponseEntity<Movie> updateMovie(@PathVariable long id, @RequestBody Movie Movie) {
-		return new ResponseEntity<Movie>(this.service.update(id, Movie), HttpStatus.ACCEPTED);
+	public ResponseEntity<Movie> updateMovie(@PathVariable long id, @RequestBody Movie movie) {
+		return new ResponseEntity<Movie>(this.service.update(id, movie), HttpStatus.ACCEPTED);
 	}
 	
 	
