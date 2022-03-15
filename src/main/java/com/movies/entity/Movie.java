@@ -102,12 +102,13 @@ public class Movie {
 		return "Movie [id=" + id + ", age=" + age + ", name=" + name + ", director=" + director + ", rating=" + rating
 				+ "]";
 		}
-		
-	
+
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(age, rating, director, id, name);
+		return Objects.hash(age, director, name, rating);
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -118,9 +119,13 @@ public class Movie {
 		if (getClass() != obj.getClass())
 			return false;
 		Movie other = (Movie) obj;
-		return age == other.age && Objects.equals(rating, other.rating) && Objects.equals(director, other.director)
-				&& id == other.id && Objects.equals(name, other.name);
+		return age == other.age && Objects.equals(director, other.director) && Objects.equals(name, other.name)
+				&& Objects.equals(rating, other.rating);
 	}
-
+	
+	
+		
+	
+	
 		
 }
