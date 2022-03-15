@@ -1,4 +1,4 @@
-package com.movies;
+package com.movies.rest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
